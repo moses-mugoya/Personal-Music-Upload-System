@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+      {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'music/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy">
+
+    <meta charset="UTF-8">
+    <title>{%block title%} {%endblock%}</title>
+</head>
+<body id="bod" data-spy="scroll" data-target=".navbar" data-offset="100">
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                {% load static %}
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-target="#navB" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    {% load static %}
+                    <a class="navbar-brand logo" href="{% url 'music:index' %}">
+                        MKD Music Crew
+                    </a>
+                </div>
+
+                <div class="navbar-collapse collapse" id="navB">
+                     <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="#playlist"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp; Songs</a>
+                        </li>
+                        <li><a href="#mkda">MKD Artistes</a> </li>
+                     </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#lyric">Song Lyrics</a> </li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    {%block content%}
+
+    {%endblock%}
+
+    {%load static%}
+    <script src="{%static 'music/bootstrap/js/jquery.min.js'%}"></script>
+    <script src="{%static 'music/bootstrap/js/bootstrap.min.js'%}"></script>
+
+</body>
+</html>

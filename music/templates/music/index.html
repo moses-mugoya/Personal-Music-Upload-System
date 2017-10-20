@@ -1,0 +1,233 @@
+<!--Inheriting from the base template-->
+{% extends 'base.html'%}
+
+{%block title%} Home {%endblock%}
+
+{%block content%}
+
+<!--load static files from the static directory-->
+    {% load static %}
+
+<!-- Cover photo & Blog section-->
+    <div class="container">
+        <div class="col-md-8">
+            <img src="{% static 'music/img/mkd4.jpg' %}" class="img-responsive heit">
+        </div>
+
+        <div class="col-md-4 sideB">
+            <h3 id="Iq">Blog</h3>
+            <h3 id="iq2">Latest News</h3>
+         <!--retrieving data from the database using a for loop-->
+            {%for quote in daily%}
+                <p id="quote">
+                    {{quote.body}}
+                </p>
+                <p class="pub">
+                    Posted {{quote.publish}} by {{quote.artist}}
+                </p>
+            {%endfor%}
+            <br>
+            <h3 id="Ib">Events</h3>
+            <p id="quot">
+                {%for quot in bible%}
+                {{quot.body}}
+            </p>
+            <br>
+            <br>
+            <p class="pub">
+                Posted {{quot.publish}} by {{quot.artist}}
+            </p>
+            {%endfor%}
+        </div>
+    </div>
+    <br>
+
+<!--About us section-->
+    <div class="container">
+        <div class="col-sm-5 mkd">
+            <h3 class="hu">About Us</h3>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <p id="pras">
+            <b>MKD</b> is an upcoming music group currently based in Kibra. Our main aim is to spread the word of God and inspire
+            people through our music. <b>MKD</b> is composed of four people who are devoted to the group to ensure the main
+            aim is achieved; Moses Mugoya aka <b>Mugonchez</b> is the vocalist, Derrick Kimaisi aka <b>Trapper_
+            Kimdrick</b> is a rapper, Daniel Wandera aka <b>Danny B</b> is a rapper too and finally George Juma aka
+            <b>Vajom</b> who is also a rapper. <b>MKD</b> started in the year 2015 consisting of three members; <b>Mugonchez</b>,
+            <b>Kimdrick</b> and <b>Danny B</b>. The group was named after the three members as initials of the first letter
+            of their names,(<b>M</b>ugonchez <b>K</b>imdrick <b>D</b>anny B). The group grew and now it has four members including
+            Vajom.
+        </p>
+
+    </div>
+    <br>
+
+<!--Song playlist section-->
+  <div class="container">
+      <div class="col-sm-5 mkd">
+        <h3 class="hu" id="playlist">Songs Playlist</h3>
+      </div>
+      <br>
+      <br>
+      <br>
+      <p class="more">These are the songs that we have recorded so far but there are more to come.</p>
+
+      <!--retrieving songs from the database using a for loop-->
+      {%for son in song%}
+            <h3 >
+                <a id="songs" href="{{son.get_absolute_url}}">
+                    <span class="glyphicon glyphicon-cd" aria-hidden="true"></span>  {{son.title}}
+                </a>
+            </h3>
+            <p class="counts">
+                <a href="{{son.get_absolute_url}}">
+                     <img src="{%static 'music/img/comment.png'%}" style="width:34px;height:34px;border:0;">
+                     {{son.comments.count}} comment{{ son.comments.count|pluralize }}
+                </a>
+            </p>
+      {%endfor%}
+  </div>
+  <br>
+
+<!--MKD artistes section-->
+  <div class="container">
+      <div class="col-sm-5 mkd" >
+          <h3 class="hu" id="mkda">MKD Artistes</h3>
+      </div>
+  </div>
+  <br>
+  <div class="container">
+      <div class="row">
+           <p class="more" id="left">Currently, these are the artistes of MKD music group. We hope the number will grow as
+               time goes by because we want to grow a music empire.
+           </p>
+          <br>
+          {%load static%}
+          <section class="col-sm-3">
+              <img src="{% static 'music/img/mugonchez.jpg'%}" class="img-rounded img-responsive hi">
+              <h3 class="name">Mugonchez</h3>
+              <p class="art">
+                  Moses Mugoya aka Mugonchez is a humble and God fearing man. He is saved and a singer in the MKD music group.He likes
+                  singing and dancing and sometimes you wll hear him rap. Mugonchez is a student at Meru University
+                  of Science and Technology taking a bachelor's degree in Computer Science. When he is not singing, you
+                  will find him coding programs, he is also interested in technology. He is the designer and developer
+                  of this website. He believes he'll make the greatest developer.
+              </p>
+          </section>
+
+          <section class="col-sm-3">
+              <img src="{%static 'music/img/dannyB.jpg'%}" class="img-rounded img-responsive hi">
+              <h3 class="name">Danny B</h3>
+              <p class="art">
+                  Dani-el Wandera aka Danny B is an artiste who does mostly inspirational songs. He is born again and
+                  accepts Jesus Christ as his personal LORD and saviour. He is a rapper in the MKD music group but
+                  a times he also sings. He believes in being the best though not perfect as man is to error. Danny B
+                  likes travelling a lot. He believes and has faith that someday he'll make the best Engineer.
+              </p>
+          </section>
+
+          <section class="col-sm-3">
+              <img src="{%static 'music/img/trapper.jpg'%}" class="img-rounded img-responsive hi">
+              <h3 class="name">Trapper_Kimdrick</h3>
+              <p class="art">
+                  Derrick Kimaisi is a God fearing person and a rapper based on inspiration in the MKD music group.
+                  Trapper_Kimdrick is his preferably stage name. He loves freestyles. Trapper is a Plant Ecologist in
+                  the making at Jomo Kenyatta University of Agriculture and Technology (JKUAT), Juja main campus. He is
+                  reachable at social media handles at Trapper_Kimdrick, be it youtube, twitter, facebook or Instagram.
+              </p>
+          </section>
+
+          <section class="col-sm-3">
+              <img src="{% static 'music/img/vajom.jpg'%}" class="img-rounded img-responsive hi">
+              <h3 class="name">Vajom</h3>
+              <p class="art">
+                  George Juma aka Vajom is one of the most coolest and God fearing person. Currently he is a member of
+                  the best music group in town,MKD. He is a rapper and also a singer. When he is not in the studio, you
+                  will find him in class teaching. He likes interacting with his students encouraging them so that they
+                  make it someday in life.
+              </p>
+          </section>
+      </div>
+  </div>
+  <br>
+
+<!--Song Lyrics section-->
+  <div class="container">
+      <div class="col-sm-5 mkd">
+          <h3 class="hu" id="lyric">Song Lyrics</h3>
+      </div>
+  </div>
+
+  <div class="container">
+          {% for songs in song%}
+            {% if songs.slug == "breaking-free" %}
+                <h3>
+                    <a class="lyrics" href="{% url 'music:breaking_free'  songs.id%}">
+                         <span class="glyphicon glyphicon-cd" aria-hidden="True"></span> {{songs.title}}
+                    </a>
+                </h3>
+                <p class="count">
+                    [Mugonchez]
+                      <br>
+                        yeah yeah
+                      <br>
+                    Oooooooooh Danny B, Dero Kim, Moses Everybody
+                      <br>
+                    Everybody knows am going far
+                      <br>
+                    Everybody knows am setting high
+                      <br>
+                    Everybody knows am breaking free from chains of sa...
+                      <br>
+                    <h4 class="create">Click on the song to view the full lyrics</h4>
+                </p>
+            {% elif songs.slug == "god-like-you" %}
+                <h3>
+                    <a  class="lyrics" href="{% url 'music:god_like'  songs.id%}">
+                         <span class="glyphicon glyphicon-cd" aria-hidden="True"></span> {{songs.title}}
+                    </a>
+                </h3>
+                <p class="count">
+                    [Mugonchez]
+                      <br>
+                    I have never seen a God like you
+                      <br>
+                    You got me up now am feeling so high
+                      <br>
+                    You my hope, for my life
+                      <br>
+                    I can't live a day without you Lord...
+                      <br>
+                    <h4 class="create">Click on the song to view the full lyrics</h4>
+                </p>
+           {% else %}
+            <h3>
+                 <a class="lyrics" href="#">
+                         <span class="glyphicon glyphicon-cd" aria-hidden="True"></span> {{songs.title}}
+                 </a>
+            </h3>
+
+            <h4 class="create">The lyrics for Exactly are not yet out but will be available soon</h4>
+            {%endif%}
+          {%endfor%}
+  </div>
+
+<!--footer section-->
+  <div id="footer">
+      <h3 id="contact">Contact Us</h3>
+      <p>Email: mosesmugoya31@gmail.com</p>
+      <p>Tel  : +254705784902 - Mugonchez</p>
+      <p>Tel  : +254724032653 - Danny B</p>
+      <P>Tel  : +254797178909 - Vajom</P>
+      <p>Tel  : +254791255862 - Trapper_Kimdrick</p>
+
+      &copy; 2017 MKDMusic.com All Rights Reserved
+        <br>
+        <br>
+      <p id="dev">Designed and developed by Mugonchez</p>
+
+  </div>
+
+{%endblock%}

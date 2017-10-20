@@ -1,0 +1,285 @@
+.navbar-default .navbar-brand {
+    font-size: 1.2em;
+    color: rgb(223,223,0);
+
+}
+
+.navbar-default .navbar-brand:hover {
+    font-size: 1.2em;
+    color: black;
+
+}
+
+#bod{
+padding-top:70px;
+background-color:rgb(221,244,247);
+
+}
+
+.navbar{
+    background-color:rgb(11,116,115);
+    font-size: 1.2em;
+    border: none;
+    border-radius:0;
+
+
+
+}
+
+.navbar-default .navbar-nav > li > a{
+    color: rgb(251,244,244);
+    padding-left:30px;
+    padding-right:30px;
+
+
+}
+
+.sideB{
+     background-color:rgb(11,116,115);
+     height:466px;
+     color: rgb(223,223,0);
+}
+
+#Iq{
+     font-size: 25px;
+     font-family: Verdana, Helvetica, Serif;
+
+}
+#iq2{
+     font-size: 22px;
+     font-family: Verdana, Helvetica, Serif;
+
+}
+
+#Ib{
+     font-size: 22px;
+     font-family: Verdana, Helvetica, Serif;
+}
+
+#quote{
+    color:white;
+    font-style: italic;
+}
+
+#quot{
+    color:white;
+    font-style:italic;
+    display:inline;
+}
+
+.hori{
+    color:red;
+}
+
+#lowerb{
+    background-color:rgb(11,130,115);
+    height:40px;
+    color: rgb(223,223,0);
+    padding:5px;
+    border-radius:5px;
+}
+
+#header3{
+    display:inline;
+    font-family: Verdana, Helvetica, Serif;
+}
+
+#lowerb2{
+    background-color:rgb(11,116,115);
+    height:40px;
+    color: rgb(223,223,0);
+    padding:5px;
+    border-radius:5px;
+
+}
+
+#header4{
+    display:inline;
+    font-family: Verdana, Helvetica, Serif;
+}
+
+#con{
+    font-size: 15px;
+    display:inline
+}
+
+#who{
+    font-size: 20px;
+    color: rgb(223,223,0);
+    font-family: Verdana, Helvetica, Serif;
+    display:inline;
+}
+
+#are{
+    background-color:rgb(11,130,115);
+    color: white;
+    padding:5px
+}
+
+#us{
+    background-color:rgb(11,130,115);
+    height:40px;
+    color: rgb(223,223,0);
+    padding:5px;
+    border-radius:5px;
+
+}
+
+#hus{
+    display:inline;
+    font-family: Verdana, Helvetica, Serif;
+}
+
+#pras{
+    font-size:16px;
+    color:#051c4b;
+    font-family: Verdana, Helvetica, Serif;
+
+}
+
+.more{
+    font-size: 16px;
+    color:#051c4b;
+    font-family: Verdana, Helvetica, Serif;
+
+}
+
+#songs{
+    font-size:18px;
+    color:#0b3f69;
+}
+
+.mkd{
+    background-color:rgb(11,130,115);
+    height:40px;
+    color: rgb(223,223,0);
+    padding:5px;
+    border-radius:5px;
+}
+
+
+.hu{
+    display:inline;
+    font-family: Verdana, Helvetica, Serif;
+}
+
+.name{
+    font-family: Verdana, Helvetica, Serif;
+    font-size: 20px;
+    color:#000;
+}
+
+.art{
+    font-size:16px;
+    color:#051c4b;
+
+}
+.hi{
+height: 300px;
+}
+
+#left{
+margin-left:13px;
+
+}
+
+#music{
+    height:50px;
+
+}
+
+#success{
+background-color:rgb(62,149,88);
+height: 40px;
+color:white;
+width:500px;
+font-size: 18px;
+padding: 10px;
+
+}
+
+.create{
+font-style:italic;
+font-size:13px;
+color:grey;
+}
+
+.com{
+color: #0a8120;
+}
+
+.counts{
+color:#0a8120;
+font-size:16px;
+font-style:italic;
+}
+
+.sideb{
+     background-color:rgb(11,116,115);
+     color: rgb(223,223,0);
+}
+
+.logo{
+    font-family:Satisfy;
+}
+
+.pub{
+ font-style:italic;
+ font-size: 13px;
+ color: #7ed000;
+}
+
+.lyrics{
+    font-size:18px;
+    color:#0b3f69;
+
+}
+.count{
+color:#2d522e;
+font-size:16px;
+margin-left: 30px;
+}
+
+#footer{
+  background-color:rgb(11,116,115);
+  height:300px;
+  text-align: center;
+  color: white;
+}
+
+#contact{
+ color: rgb(223,223,0);
+ padding-top:10px;
+
+}
+
+#dev{
+    color:#14fb1d;
+    font-style:italic;
+}
+
+.lyrical{
+    color: #0d4371;
+    font-size:17px;
+    font-family: Verdana, Helvetica, Serif;
+
+}
+
+#title{
+    font-size:40px;
+    font-family: Verdana, Helvetica, Serif;
+    font-weight: bold;
+}
+
+.uni{
+   color:#120250;
+
+}
+
+#milogo{
+max-width:100%;
+max-height:100%;
+
+}
+
+

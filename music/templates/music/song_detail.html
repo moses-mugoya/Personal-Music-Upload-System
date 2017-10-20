@@ -1,0 +1,111 @@
+{%extends 'base2.html'%}
+{%block title%}Songs{%endblock%}
+
+{%block content%}
+    <div class="container">
+        {% if messages %}
+         <div class="container">
+             {% for message in messages %}
+                <p class="{{ message.tags }}" id="success">
+                    {{ message|safe }}
+                         <a href="{{songs.get_absolute_url}}" class="close">✖</a>
+                </p>
+             {% endfor %}
+         </div>
+        {% endif %}
+    </div>
+
+    <div class="container">
+        <h3 class="uni" id="title">
+            <span class="glyphicon glyphicon-headphones" aria-hidden="True"></span> {{songs.title}}
+        </h3>
+        <br>
+        <img src="{{songs.song_logo.url}}" class="img-responsive">
+        <br>
+         <audio controls id="music">
+            <source src="{{songs.songFile.url}}" type="audio/ogg">
+            <source src="{{songs.songFile.url}}" type="audio/mpeg">
+            <source src="{{songs.songFile.url}}" type="audio/wav">
+         </audio>
+         <br>
+         <br>
+         <a href="{{songs.songFile.url}}" download>
+         <button class="btn btn-primary">
+             Download <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+         </button>
+    </a>
+    </div>
+
+
+
+    <div class="container">
+        <h2 class="uni">Share link via</h2>
+        {%load static%}
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{songs.get_absolute_url}}/">
+            <img src="{%static 'music/img/fb.png'%}" style="width:42px;height:42px;border:0;">
+        </a>
+        &nbsp;
+         <a href="https://twitter.com/home?status=Hello%20check%20out%20the%20best%20songs%20from%20MKD%20through%20this%20link%20%23MKD%20{{songs.get_absolute_url}}">
+            <img src="{%static 'music/img/twitter.jpg'%}" style="width:42px;height:42px;border:0;">
+        </a>
+        &nbsp;
+         <a href='https://plus.google.com/share?url={{songs.get_absolute_url}}'>
+            <img src="{%static 'music/img/gp.png'%}" style="width:42px;height:42px;border:0;">
+        </a>
+        &nbsp;
+         <a href="https://www.linkedin.com/shareArticle?mini=True&url={{songs.get_absolute_url}}/&title=Hello%20Check%20out%20the%20best%20of%20MKD%20songs%20and%20don%27t%20forget%20to%20leave%20a%20comment&summary=...&source=http://codingforentrepreneurs.com/">
+            <img src="{%static 'music/img/linked.jpg'%}" style="width:42px;height:42px;border:0;">
+        </a>
+    </div>
+    <br>
+    <div class="container">
+          {% with comments.count as total_comments %}
+                <h2 class="uni">{{ total_comments }} comment{{ total_comments|pluralize }}</h2>
+          {% endwith %}
+    </div>
+    <br>
+
+
+        <div class="container">
+            {%for comment in comments%}
+            <div class="comment">
+                <p class="info">
+                     <h3 class="create"> {{ comment.name }}
+                     {{ comment.created }}
+                     </h3>
+                    <h4 class="com">{{ comment.body|linebreaks }}</h4>
+                </p>
+            </div>
+            {%empty%}
+            <p>There are no comments yet</p>
+            {%endfor%}
+        </div>
+
+
+
+    <div class="container">
+         {%if new_comment%}
+             <h2>Your comment has been added</h2>
+         {%else%}
+        <h2 class="uni">Add a comment</h2>
+    </div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default col-sm-8">
+            <div class="panel-body">
+                <form class="form-horizontal" method="post" enctype="multipart/form-data">
+                    {% csrf_token%}
+                    {% include 'music/form_template.html'%}
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <button type="Submit" class="btn btn-primary">Add a comment</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{%endif%}
+{%endblock%}
